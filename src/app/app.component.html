@@ -1,10 +1,10 @@
 <button class="restart" (click)="newGame()">Restart game</button>
 
-<div class="start">
+<div class="start" *ngIf="!joined">
     <label class="item">Email address:
-        <input class="item" type="email" *ngIf="!joined" [(ngModel)]="mail"/>
+        <input class="item" type="email" [(ngModel)]="mail"/>
     </label>
-    <button class="item" (click)="joinGame()" *ngIf="!joined">Join game</button>
+    <button class="item" (click)="joinGame()">Join game</button>
 </div>
 
 <div *ngIf="joined">
