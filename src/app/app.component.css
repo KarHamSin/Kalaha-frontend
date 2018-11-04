@@ -1,0 +1,25 @@
+mat-grid-tile {
+    background: lightblue;
+}
+.mat-grid-tile:hover {
+    background: dodgerblue;
+    cursor: pointer;
+}
+
+.restart {
+    margin-top: 15px;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.start{
+    size: 15px;
+    font-size: 17px;
+    position: relative;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.start .item{
+    margin: 4px;
+}

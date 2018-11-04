@@ -1,0 +1,33 @@
+<button class="restart" (click)="newGame()">Restart game</button>
+
+<div class="start">
+    <label class="item">Email address:
+        <input class="item" type="email" *ngIf="!joined" [(ngModel)]="mail"/>
+    </label>
+    <button class="item" (click)="joinGame()" *ngIf="!joined">Join game</button>
+</div>
+
+<div *ngIf="joined">
+    <button (click)="disconnect()">Leave game</button>
+    <p *ngIf="player=='PLAYERONE'">You are player one</p>
+    <p *ngIf="player=='PLAYERTWO'">You are player two</p>
+    <p *ngIf="board.turn==player">It is your turn</p>
+    <p *ngIf="player=='NONE'">Game is full, please restart the game in order to play.</p>
+    <p *ngIf="!gameStarted">Waiting for another player to join.</p>
+</div>
+
+<div *ngIf="gameStarted">
+
+    <mat-grid-list cols="6" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let pit of board.pits?.slice(6,12).reverse(); let i = index" id="{{11-i}}" (click)="setIndexSelection(11-i)">{{pit}}</mat-grid-tile>
+    </mat-grid-list>
+    <br>
+    <mat-grid-list cols="6" rowHeight="1:1">
+        <mat-grid-tile *ngFor="let pit of board.pits?.slice(0,6); let i = index" id="{{i}}" (click)="setIndexSelection(i)">{{pit}}</mat-grid-tile>
+    </mat-grid-list>
+    <button (click)="distributeStones()">Distribute Stones</button>
+
+    <h2>Big pit player one: {{board.bigPits[0]}}</h2>
+    <h2>Big pit player two: {{board.bigPits[1]}}</h2>
+
+</div>
