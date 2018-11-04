@@ -25,6 +25,8 @@ modules/.settings
 .vscode
 modules/.vscode
 
+node
+
 # Don't check in secret files
 *secret.js
 
