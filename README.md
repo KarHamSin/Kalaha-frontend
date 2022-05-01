@@ -1,4 +1,6 @@
-# BolApp
+This was a coding assignment withh a time limit of 24 hours
+
+# App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
